@@ -80,5 +80,6 @@ $ bazel build -s /...
 # now try with clang
 # -- THIS SHOULD SUCCEED --
 
+$ bazel clean --expunge
 $ bazel build -s --config=clang //...
 ```
