@@ -1,0 +1,15 @@
+# use the clang CROSSTOOL under clang config
+build:clang --crosstool_top=@bazel_clang//:clang
+build:clang --host_crosstool_top=@bazel_clang//:clang
+
+# color output on GCC
+build --cxxopt="-fdiagnostics-color=always"
+
+# strict errors and warnings
+build --cxxopt="-Wall"
+build --cxxopt="-Werror"
+build --cxxopt="-Wunused-parameter"
+build --cxxopt="-Wno-sequence-point"
+
+# c++11
+build --cxxopt="-std=c++11"

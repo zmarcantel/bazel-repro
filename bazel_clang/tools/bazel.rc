@@ -1,0 +1,6 @@
+# use the clang CROSSTOOL under clang config
+build:clang --crosstool_top=//:clang
+build:clang --host_crosstool_top=//:clang
+
+# c++11
+build --cxxopt="-std=c++11"
