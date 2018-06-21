@@ -5,6 +5,9 @@ Minimal example of an issue where a `local_repository` that is
 used as a `CROSSTOOL` seemingly does not execute the `WORKSPACE`
 of the repo.
 
+A `Vagrantfile` is included for a nice hermetic testbed.
+The two "repos" are synced into `/$REPO_DIR_NAME/{proj,bazel_clang}`.
+
 **NOTE:** yes, there are bugs/issues in the wrappers -- should not
 have any effect here. currently under development.
 
