@@ -5,6 +5,10 @@ Minimal example of an issue where a `local_repository` that is
 used as a `CROSSTOOL` seemingly does not execute the `WORKSPACE`
 of the repo.
 
+**NOTE:** yes, there are bugs/issues in the wrappers -- should not
+have any effect here. currently under development.
+
+
 Expectation
 ------------
 
@@ -42,13 +46,9 @@ This is agnostic to OS (just have to change URL and SHA hash).
 Tested on Ubuntu and MacOS.
 
 ```
-# cd into this repo
-
-$ cd $REPO_DIR
-
 # cd into the dependent project
 
-$ cd proj
+$ cd $REPO_DIR/ proj
 
 # build with the default toolchain to confirm
 # a working setup and baseline
@@ -60,7 +60,15 @@ $ bazel build -s //...
 
 $ bazel clean --expunge
 $ bazel build -s --config=clang //...
+```
 
+But... when we build the "fake" project I've copied into
+the crosstool's repo, everything works. This uses the same
+`bazel.rc` and everything, but works fine.
+
+Archive is downloaded and the build uses the wrappers.
+
+```
 # cd to the crosstool dir/repo
 
 $ cd ../bazel_clang
