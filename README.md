@@ -48,7 +48,7 @@ Tested on Ubuntu and MacOS.
 ```
 # cd into the dependent project
 
-$ cd $REPO_DIR/ proj
+$ cd $REPO_DIR/proj
 
 # build with the default toolchain to confirm
 # a working setup and baseline
