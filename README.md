@@ -71,7 +71,7 @@ Archive is downloaded and the build uses the wrappers.
 ```
 # cd to the crosstool dir/repo
 
-$ cd ../bazel_clang
+$ cd $REPO_DIR/bazel_clang
 
 # build with default to re-confirm
 
